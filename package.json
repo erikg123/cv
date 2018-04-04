@@ -1,0 +1,34 @@
+{
+  "name": "cv-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm-run-all --parallel watch:server watch:build",
+    "watch:build": "webpack --watch --mode=development",
+    "watch:server": "nodemon ./dist/bundle-api.js --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erikg123/cv-api.git"
+  },
+  "author": "Erik Granbom",
+  "license": "ISC",
+  "homepage": "https://github.com/erikg123/cv-api#readme",
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "express": "^4.16.3",
+    "express-graphql": "^0.6.12",
+    "graphql": "^0.13.2",
+    "nodemon": "^1.17.3",
+    "npm-run-all": "^4.1.2",
+    "path": "^0.12.7",
+    "webpack": "^4.4.1",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "devDependencies": {
+    "webpack-cli": "^2.0.13"
+  }
+}
