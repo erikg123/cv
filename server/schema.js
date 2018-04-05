@@ -2,7 +2,7 @@ import { buildSchema } from 'graphql';
 
 export const schema = buildSchema(`
 type Query {
-  getInformation(id: ID): Information
+  getInformation: [Information]
   getWorkExperience: [WorkExperience]
   getEmployments: [Employment]
   getEducations: [Education]
