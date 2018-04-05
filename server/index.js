@@ -1,8 +1,8 @@
-import express from 'express';
-import graphqlHTTP from 'express-graphql';
+const express = require('express');
+const graphqlHTTP = require('express-graphql');
 
-import { schema } from './schema';
-import { resolvers } from './resolvers';
+const schema = require('./schema');
+const resolvers = require('./resolvers');
 
 const app = express();
 app.use(
