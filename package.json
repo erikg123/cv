@@ -5,9 +5,14 @@
   "main": "index.js",
   "scripts": {
     "start": "npm-run-all --parallel watch:server watch:client",
-    "build": "webpack --mode=production",
-    "watch:server": "nodemon ./server/",
-    "watch:client": "webpack-dev-server --mode development --open"
+    "build": "npm-run-all --parallel build:server build:client",
+    "build:server":
+      "webpack --mode=production --config webpack.config.server.js",
+    "build:client":
+      "webpack --mode=production --config webpack.config.client.js",
+    "watch:server": "nodemon ./server --watch ./server --ignore ./client",
+    "watch:client":
+      "webpack-dev-server --mode development --config webpack.config.client.js"
   },
   "repository": {
     "type": "git",

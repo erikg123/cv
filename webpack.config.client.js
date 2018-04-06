@@ -1,6 +1,5 @@
 const webpack = require('webpack');
 const path = require('path');
-const nodeExternals = require('webpack-node-externals');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 module.exports = [
@@ -13,14 +12,14 @@ module.exports = [
     },
     devtool: 'inline-source-map',
     devServer: {
-      contentBase: path.resolve(__dirname, 'dist'),
+      port: 3000,
       hot: true
     },
     module: {
       rules: [
         {
           test: /\.js$/,
-          exclude: /node_modules/,
+          exclude: [/node_modules/, /server/],
           use: {
             loader: 'babel-loader'
           }
@@ -39,15 +38,5 @@ module.exports = [
       new webpack.NamedModulesPlugin(),
       new webpack.HotModuleReplacementPlugin()
     ]
-  },
-  {
-    name: 'server',
-    entry: path.resolve(__dirname, 'server', 'index.js'),
-    output: {
-      path: path.resolve(__dirname, 'dist'),
-      filename: 'bundle-server.js'
-    },
-    target: 'node',
-    externals: [nodeExternals()]
   }
 ];
