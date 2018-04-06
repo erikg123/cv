@@ -3,26 +3,6 @@ const path = require('path');
 const nodeExternals = require('webpack-node-externals');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 
-const config = {
-  rules: [
-    {
-      test: /\.js$/,
-      exclude: /node_modules/,
-      use: {
-        loader: 'babel-loader',
-        options: {
-          presets: ['babel-preset-env']
-        }
-      }
-    }
-  ]
-};
-
-const htmlPlugin = new HtmlWebPackPlugin({
-  template: './client/index.html',
-  filename: './index.html'
-});
-
 module.exports = [
   {
     name: 'client',
@@ -36,9 +16,26 @@ module.exports = [
       contentBase: path.resolve(__dirname, 'dist'),
       hot: true
     },
-    module: config,
+    module: {
+      rules: [
+        {
+          test: /\.js$/,
+          exclude: /node_modules/,
+          use: {
+            loader: 'babel-loader'
+          }
+        },
+        {
+          test: /\.css$/,
+          use: ['style-loader', 'css-loader']
+        }
+      ]
+    },
     plugins: [
-      htmlPlugin,
+      new HtmlWebPackPlugin({
+        template: './client/index.html',
+        filename: './index.html'
+      }),
       new webpack.NamedModulesPlugin(),
       new webpack.HotModuleReplacementPlugin()
     ]
@@ -50,7 +47,6 @@ module.exports = [
       path: path.resolve(__dirname, 'dist'),
       filename: 'bundle-server.js'
     },
-    module: config,
     target: 'node',
     externals: [nodeExternals()]
   }
