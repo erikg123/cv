@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm-run-all --parallel watch:server watch:build",
-    "watch:build": "webpack --watch --mode=development",
-    "watch:server": "nodemon ./dist/bundle-api.js --watch"
+    "start": "npm-run-all --parallel watch:server watch:client",
+    "build": "webpack --mode=production",
+    "watch:server": "nodemon ./server/",
+    "watch:client": "webpack-dev-server --mode development --open"
   },
   "repository": {
     "type": "git",
@@ -19,16 +20,21 @@
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
     "express": "^4.16.3",
     "express-graphql": "^0.6.12",
     "graphql": "^0.13.2",
     "nodemon": "^1.17.3",
     "npm-run-all": "^4.1.2",
     "path": "^0.12.7",
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
     "webpack": "^4.4.1",
     "webpack-node-externals": "^1.7.2"
   },
   "devDependencies": {
-    "webpack-cli": "^2.0.13"
+    "html-webpack-plugin": "^3.2.0",
+    "webpack-cli": "^2.0.13",
+    "webpack-dev-server": "^3.1.1"
   }
 }

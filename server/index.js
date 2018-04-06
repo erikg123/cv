@@ -1,22 +1,17 @@
-import express from 'express';
-import graphqlHTTP from 'express-graphql';
-import { buildSchema } from 'graphql';
+const express = require('express');
+const graphqlHTTP = require('express-graphql');
 
-const schema = buildSchema(`
-  type Query {
-    hello: String
-  }
-`);
-
-const rootValue = { hello: () => 'Hello world!' };
+const schema = require('./schema');
+const resolvers = require('./resolvers');
 
 const app = express();
 app.use(
   '/graphql',
   graphqlHTTP({
     schema,
-    rootValue,
+    rootValue: resolvers,
     graphiql: true
   })
 );
+
 app.listen(4000);
