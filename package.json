@@ -5,43 +5,41 @@
   "main": "index.js",
   "scripts": {
     "start": "npm-run-all --parallel watch:server watch:client",
-    "build": "npm-run-all --parallel build:server build:client",
-    "build:server":
-      "webpack --mode=production --config webpack.config.server.js",
-    "build:client":
-      "webpack --mode=production --config webpack.config.client.js",
-    "watch:server": "nodemon ./server --watch ./server --ignore ./client",
-    "watch:client":
-      "webpack-dev-server --mode development --config webpack.config.client.js"
+    "build": "webpack --mode=production",
+    "watch:server":
+      "nodemon --experimental-modules server/index.mjs --watch ./server --ignore ./client",
+    "watch:client": "webpack-dev-server --mode development"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/erikg123/cv-api.git"
   },
   "author": "Erik Granbom",
-  "license": "ISC",
+  "license": "MIT",
   "homepage": "https://github.com/erikg123/cv-api#readme",
   "dependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
+    "axios": "^0.18.0",
+    "eslint": "^4.19.1",
     "express": "^4.16.3",
     "express-graphql": "^0.6.12",
     "graphql": "^0.13.2",
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.44",
+    "@babel/preset-env": "^7.0.0-beta.44",
+    "@babel/preset-react": "^7.0.0-beta.44",
+    "babel-loader": "^8.0.0-beta.2",
+    "css-loader": "^0.28.11",
+    "html-webpack-plugin": "^3.2.0",
     "nodemon": "^1.17.3",
     "npm-run-all": "^4.1.2",
     "path": "^0.12.7",
-    "react": "^16.3.1",
-    "react-dom": "^16.3.1",
-    "webpack": "^4.4.1",
-    "webpack-node-externals": "^1.7.2"
-  },
-  "devDependencies": {
-    "css-loader": "^0.28.11",
-    "html-webpack-plugin": "^3.2.0",
     "style-loader": "^0.20.3",
+    "webpack": "^4.4.1",
     "webpack-cli": "^2.0.13",
-    "webpack-dev-server": "^3.1.1"
+    "webpack-dev-server": "^3.1.1",
+    "webpack-node-externals": "^1.7.2"
   }
 }

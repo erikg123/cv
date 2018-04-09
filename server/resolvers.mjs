@@ -1,4 +1,4 @@
-const {
+import {
   information,
   workExperience,
   employments,
@@ -6,9 +6,9 @@ const {
   courses,
   skills,
   languages
-} = require('./data');
+} from './data';
 
-module.exports = resolvers = {
+export const resolvers = {
   getInformation() {
     return information;
   },

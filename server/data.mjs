@@ -4,7 +4,7 @@
 //   imageUrl: String
 //   presentation: String
 // }
-const information = [
+export const information = [
   {
     id: '1a',
     name: 'Erik Granbom',
@@ -22,7 +22,7 @@ const information = [
 //   description: String
 //   skills: [String]
 // }
-const workExperience = [
+export const workExperience = [
   {
     id: '2a',
     dateRange: 'Sep 2017 - Mar 2018',
@@ -84,7 +84,7 @@ const workExperience = [
 //   dateRange: String
 //   company: String
 // }
-const employments = [
+export const employments = [
   {
     id: '3a',
     dateRange: 'Mar 2018 - Ongoing',
@@ -108,7 +108,7 @@ const employments = [
 //   school: String
 //   program: String
 // }
-const educations = [
+export const educations = [
   {
     id: '4a',
     dateRange: '2010 - 2013',
@@ -124,7 +124,7 @@ const educations = [
 //   date: String
 //   description: String
 // }
-const courses = [
+export const courses = [
   {
     id: '5a',
     name: 'Building Web Applications with React',
@@ -154,7 +154,7 @@ const courses = [
 //   skill: String
 //   level: Int
 // }
-const skills = [
+export const skills = [
   {
     id: '6a',
     skill: 'JavaScript',
@@ -222,7 +222,7 @@ const skills = [
 //   language: String
 //   level: String
 // }
-const languages = [
+export const languages = [
   {
     id: '7a',
     language: 'Swedish',
@@ -234,13 +234,3 @@ const languages = [
     level: 'Full professional proficiency'
   }
 ];
-
-module.exports = {
-  information,
-  workExperience,
-  employments,
-  educations,
-  courses,
-  skills,
-  languages
-};

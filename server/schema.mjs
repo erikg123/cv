@@ -1,6 +1,6 @@
-const { buildSchema } = require('graphql');
+import { buildSchema } from 'graphql';
 
-module.exports = schema = buildSchema(`
+export const schema = buildSchema(`
 type Query {
   getInformation: [Information]
   getWorkExperience: [WorkExperience]
