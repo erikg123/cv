@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm-run-all --parallel watch:server watch:client",
     "build": "webpack --mode=production",
-    "watch:server": "nodemon --experimental-modules server/index.mjs --watch ./server --ignore ./client",
+    "watch:server": "nodemon ./server --watch ./server --ignore ./client",
     "watch:client": "webpack-dev-server --mode development"
   },
   "repository": {
@@ -17,11 +17,13 @@
   "license": "MIT",
   "homepage": "https://github.com/erikg123/cv-api#readme",
   "dependencies": {
+    "apollo-server-express": "^1.3.4",
     "axios": "^0.18.0",
+    "body-parser": "^1.18.2",
     "eslint": "^4.19.1",
     "express": "^4.16.3",
-    "express-graphql": "^0.6.12",
     "graphql": "^0.13.2",
+    "graphql-tools": "^2.23.1",
     "react": "^16.3.1",
     "react-dom": "^16.3.1"
   },
@@ -40,7 +42,6 @@
     "style-loader": "^0.20.3",
     "webpack": "^4.4.1",
     "webpack-cli": "^2.0.13",
-    "webpack-dev-server": "^3.1.1",
-    "webpack-node-externals": "^1.7.2"
+    "webpack-dev-server": "^3.1.1"
   }
 }
