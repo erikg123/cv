@@ -10,14 +10,14 @@ const {
 
 const resolvers = {
   Query: {
-    getInformation: () => information,
-    getWorkExperience: () => workExperience,
-    getEmployments: () => employments,
-    getEducations: () => educations,
-    getCourses: () => courses,
-    getSkill: ({ id }) => skills.filter(skill => skill.id === id)[0],
-    getSkills: () => skills,
-    getLanguages: () => languages
+    information: () => information,
+    workExperience: () => workExperience,
+    employments: () => employments,
+    educations: () => educations,
+    courses: () => courses,
+    skill: ({ id }) => skills.filter(skill => skill.id === id)[0],
+    skills: () => skills,
+    languages: () => languages
   }
 };
 

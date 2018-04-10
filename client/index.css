@@ -1,0 +1,9 @@
+.app-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    'header header header'
+    'main main main'
+    'footer footer footer';
+}

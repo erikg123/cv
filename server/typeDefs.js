@@ -1,13 +1,13 @@
 const typeDefs = `
 type Query {
-  getInformation: [Information]
-  getWorkExperience: [WorkExperience]
-  getEmployments: [Employment]
-  getEducations: [Education]
-  getCourses: [Course]
-  getSkill(id: ID): Skill
-  getSkills: [Skill]
-  getLanguages: [Language]
+  information: [Information]
+  workExperience: [WorkExperience]
+  employments: [Employment]
+  educations: [Education]
+  courses: [Course]
+  skill(id: ID): Skill
+  skills: [Skill]
+  languages: [Language]
 }
 
 type Information {
