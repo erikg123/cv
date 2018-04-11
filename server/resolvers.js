@@ -8,36 +8,17 @@ const {
   languages
 } = require('./data');
 
-module.exports = resolvers = {
-  getInformation() {
-    return information;
-  },
-
-  getWorkExperience() {
-    return workExperience;
-  },
-
-  getEmployments() {
-    return employments;
-  },
-
-  getEducations() {
-    return educations;
-  },
-
-  getCourses() {
-    return courses;
-  },
-
-  getSkill({ id }) {
-    return skills.filter(skill => skill.id === id)[0];
-  },
-
-  getSkills() {
-    return skills;
-  },
-
-  getLanguages() {
-    return languages;
+const resolvers = {
+  Query: {
+    information: () => information,
+    workExperience: () => workExperience,
+    employments: () => employments,
+    educations: () => educations,
+    courses: () => courses,
+    skill: ({ id }) => skills.filter(skill => skill.id === id)[0],
+    skills: () => skills,
+    languages: () => languages
   }
 };
+
+module.exports = resolvers;

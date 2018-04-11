@@ -1,27 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
-const nodeExternals = require('webpack-node-externals');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
-
-const config = {
-  rules: [
-    {
-      test: /\.js$/,
-      exclude: /node_modules/,
-      use: {
-        loader: 'babel-loader',
-        options: {
-          presets: ['babel-preset-env']
-        }
-      }
-    }
-  ]
-};
-
-const htmlPlugin = new HtmlWebPackPlugin({
-  template: './client/index.html',
-  filename: './index.html'
-});
 
 module.exports = [
   {
@@ -33,25 +12,31 @@ module.exports = [
     },
     devtool: 'inline-source-map',
     devServer: {
-      contentBase: path.resolve(__dirname, 'dist'),
+      port: 3000,
       hot: true
     },
-    module: config,
+    module: {
+      rules: [
+        {
+          test: /\.js$/,
+          exclude: [/node_modules/, /server/],
+          use: {
+            loader: 'babel-loader'
+          }
+        },
+        {
+          test: /\.css$/,
+          use: ['style-loader', 'css-loader']
+        }
+      ]
+    },
     plugins: [
-      htmlPlugin,
+      new HtmlWebPackPlugin({
+        template: './client/index.html',
+        filename: './index.html'
+      }),
       new webpack.NamedModulesPlugin(),
       new webpack.HotModuleReplacementPlugin()
     ]
-  },
-  {
-    name: 'server',
-    entry: path.resolve(__dirname, 'server', 'index.js'),
-    output: {
-      path: path.resolve(__dirname, 'dist'),
-      filename: 'bundle-server.js'
-    },
-    module: config,
-    target: 'node',
-    externals: [nodeExternals()]
   }
 ];

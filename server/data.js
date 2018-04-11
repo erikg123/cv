@@ -234,7 +234,6 @@ const languages = [
     level: 'Full professional proficiency'
   }
 ];
-
 module.exports = {
   information,
   workExperience,
