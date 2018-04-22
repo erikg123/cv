@@ -8,8 +8,16 @@ const information = [
   {
     id: '1a',
     name: 'Erik Granbom',
-    imageUrl: '',
-    presentation:
+    email: 'erik.granbom@gmail.com',
+    phone: '0704660533',
+    imageUrl: ''
+  }
+];
+
+const presentation = [
+  {
+    id: '2a',
+    text:
       'Erik is a web developer with experience in both front-end and back-end development. His main focus is front-end development and creating responsive and interactive user interfaces. He is passionate about JavaScript, meticulous and he always strives to learn himself and teach others. He believes in good structure, clean code, best practices and to always be a beginner at something. To keep up with the latest in development, he follows and listens to core contributors and influencers in the industry, and then likes to discuss with like-minded colleagues.'
   }
 ];
@@ -24,7 +32,7 @@ const information = [
 // }
 const workExperience = [
   {
-    id: '2a',
+    id: '3a',
     dateRange: 'Sep 2017 - Mar 2018',
     title: 'Front-end developer',
     company: 'Axis Communications',
@@ -48,7 +56,7 @@ const workExperience = [
     ]
   },
   {
-    id: '2b',
+    id: '3b',
     dateRange: 'Nov 2013 - Aug 2017',
     title: 'Full-stack developer',
     company: 'Axis Communications',
@@ -69,7 +77,7 @@ const workExperience = [
     ]
   },
   {
-    id: '2c',
+    id: '3c',
     dateRange: 'Oct 2012 - Nov 2013',
     title: 'Web developer/student consultant',
     company: 'Axis Communications through Student Consulting',
@@ -86,17 +94,17 @@ const workExperience = [
 // }
 const employments = [
   {
-    id: '3a',
+    id: '4a',
     dateRange: 'Mar 2018 - Ongoing',
     company: 'Cybercom Group AB'
   },
   {
-    id: '3b',
+    id: '4b',
     dateRange: 'Nov 2013 - Mar 2018',
     company: 'Axis Communications'
   },
   {
-    id: '3c',
+    id: '4c',
     dateRange: 'Oct 2012 - Nov 2013',
     company: 'Student Consulting'
   }
@@ -110,7 +118,7 @@ const employments = [
 // }
 const educations = [
   {
-    id: '4a',
+    id: '5a',
     dateRange: '2010 - 2013',
     school: 'Blekinge Institute of Technology',
     program: 'Computer Science (Bachelor)'
@@ -126,7 +134,7 @@ const educations = [
 // }
 const courses = [
   {
-    id: '5a',
+    id: '6a',
     name: 'Building Web Applications with React',
     company: 'Learning Tree International AB',
     date: '2017',
@@ -137,7 +145,7 @@ const courses = [
     Exploit React animation components with CSS3 transitions`
   },
   {
-    id: '5b',
+    id: '6b',
     name: 'Building Web Applications with AngularJS',
     company: 'Learning Tree International AB',
     date: '2015',
@@ -156,62 +164,62 @@ const courses = [
 // }
 const skills = [
   {
-    id: '6a',
+    id: '7a',
     skill: 'JavaScript',
     level: 4
   },
   {
-    id: '6b',
+    id: '7b',
     skill: 'HTML',
     level: 4
   },
   {
-    id: '6c',
+    id: '7c',
     skill: 'CSS',
     level: 4
   },
   {
-    id: '6d',
+    id: '7d',
     skill: 'React.js',
     level: 3
   },
   {
-    id: '6e',
+    id: '7e',
     skill: 'AngularJS',
     level: 3
   },
   {
-    id: '6f',
+    id: '7f',
     skill: 'Node.js',
     level: 3
   },
   {
-    id: '6g',
+    id: '7g',
     skill: 'Git',
     level: 3
   },
   {
-    id: '6h',
+    id: '7h',
     skill: 'Redux',
     level: 2
   },
   {
-    id: '6i',
+    id: '7i',
     skill: 'Webpack',
     level: 2
   },
   {
-    id: '6j',
+    id: '7j',
     skill: 'Jenkins',
     level: 2
   },
   {
-    id: '6k',
+    id: '7k',
     skill: 'TypeScript',
     level: 2
   },
   {
-    id: '6l',
+    id: '7l',
     skill: 'Gulp',
     level: 2
   }
@@ -224,18 +232,19 @@ const skills = [
 // }
 const languages = [
   {
-    id: '7a',
+    id: '8a',
     language: 'Swedish',
     level: 'Native or bilingual proficiency'
   },
   {
-    id: '7b',
+    id: '8b',
     language: 'English',
     level: 'Full professional proficiency'
   }
 ];
 module.exports = {
   information,
+  presentation,
   workExperience,
   employments,
   educations,
