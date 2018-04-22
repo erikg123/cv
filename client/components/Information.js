@@ -2,19 +2,20 @@ import React from 'react';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 
-import './Header.css';
+import './Information.css';
 
 const getInformation = gql`
   {
     information {
       name
+      email
+      phone
       imageUrl
-      presentation
     }
   }
 `;
 
-export const Header = () => {
+export const Information = () => {
   return (
     <Query query={getInformation}>
       {({ loading, error, data }) => {
@@ -22,9 +23,9 @@ export const Header = () => {
         if (error) return <p>Error :(</p>;
 
         return (
-          <div className="header">
+          <div className="information">
             {
-              data.information.map(({ name, imageUrl, presentation }) => {
+              data.information.map(({ name, email, phone, imageUrl }) => {
                 const image = imageUrl
                   ? imageUrl
                   : './client/assets/default-image.png';
@@ -32,7 +33,8 @@ export const Header = () => {
                   <>
                     <img src={image} alt="" />
                     <h1>{name}</h1>
-                    <p>{presentation}</p>
+                    <p>{email}</p>
+                    <p>{phone}</p>
                   </>
                 );
               })[0]
