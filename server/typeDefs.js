@@ -1,6 +1,7 @@
 const typeDefs = `
 type Query {
   information: [Information]
+  presentation: [Presentation]
   workExperience: [WorkExperience]
   employments: [Employment]
   educations: [Education]
@@ -13,8 +14,14 @@ type Query {
 type Information {
   id: ID
   name: String
+  email: String
+  phone: String
   imageUrl: String
-  presentation: String
+}
+
+type Presentation {
+  id: ID
+  text: String
 }
 
 type WorkExperience {

@@ -1,5 +1,6 @@
 const {
   information,
+  presentation,
   workExperience,
   employments,
   educations,
@@ -11,6 +12,7 @@ const {
 const resolvers = {
   Query: {
     information: () => information,
+    presentation: () => presentation,
     workExperience: () => workExperience,
     employments: () => employments,
     educations: () => educations,
