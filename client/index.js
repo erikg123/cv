@@ -5,13 +5,7 @@ import { ApolloProvider } from 'react-apollo';
 import 'normalize.css';
 
 import { Information } from './components/Information';
-import { Presentation } from './components/Presentation';
-import { WorkExperience } from './components/WorkExperience';
-import { Employments } from './components/Employments';
-import { Education } from './components/Education';
-import { Courses } from './components/Courses';
-import { Skills } from './components/Skills';
-import { Languages } from './components/Languages';
+import { Content } from './components/Content';
 import './index.css';
 
 const client = new ApolloClient({
@@ -22,13 +16,7 @@ ReactDOM.render(
   <ApolloProvider client={client}>
     <div className="app-container">
       <Information />
-      <Presentation />
-      <WorkExperience />
-      <Employments />
-      <Education />
-      <Courses />
-      <Skills />
-      <Languages />
+      <Content />
     </div>
   </ApolloProvider>,
   document.getElementById('root')
